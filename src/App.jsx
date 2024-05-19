@@ -1,35 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Profile from './components/Profile/profile';
+import user from './components/Profile/userData.json';
+// import Statistics from 'components/Statistics/Statistics';
+// import data from './Statistics/data';
+// import FriendList from 'components/FriendList/FriendList';
+// import friends from './FriendList/friends';
+// import TransactionHistory from 'components/TransactionHistory/TransactionHistory';
+// import transactions from './TransactionHistory/transactions';
+import '../src/index.css';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
-
-export default App
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        fontFamily: 'Cantarell',
+        fontSize: 40,
+        backgroundColor: '#c6cbf8',
+        color: '#010101',
+      }}
+    >
+      <Profile
+        username={user.username}
+        avatar={user.avatar}
+        tag={user.tag}
+        location={user.location}
+        stats={user.stats}
+      />
+      {/* <Statistics title="Upload stats" stats={data} />
+      <FriendList friends={friends} />
+      <TransactionHistory items={transactions} /> */}
+    </div>
+  );
+};
