@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
 import css from '../Profile/Profile.module.css';
 
-const Profile = ({ username, tag, location, avatar, stats }) => {
+const Profile = ({ name, tag, location, image, stats }) => {
   return (
     <div className={css.profile}>
       <div className={css.description}>
         <div className={css.photo}>
-          <img src={avatar} alt={username} className={css.avatar} />
+          <img src={image} alt={name} className={css.image} />
         </div>
-        <p className={css.name}>{username}</p>
+        <p className={css.name}>{name}</p>
         <p className={css.tag}>@{tag}</p>
         <p className={css.location}>{location}</p>
       </div>
@@ -31,10 +31,10 @@ const Profile = ({ username, tag, location, avatar, stats }) => {
 };
 
 Profile.propTypes = {
-  username: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   tag: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
-  avatar: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
   stats: PropTypes.objectOf(PropTypes.number.isRequired),
 };
 
